@@ -17,13 +17,13 @@
         <link rel="stylesheet" href="css/leaflet-control-geocoder.Geocoder.css">
         <style>
         html, body, #map {
-            width: 50%;
-            height: 50%;
+            width: 100%;
+            height: 100%;
             padding: 0;
             margin: 0;
         }
         </style>
-        <title>Geovisor SW</title>
+        <title>GeoSW</title>
     </head>
     <body>
         <div id="map">
@@ -89,7 +89,7 @@
             return this._div;
         };
         title.update = function () {
-            this._div.innerHTML = '<h2>Geovisor Cali</h2>';
+            this._div.innerHTML = '<h2>GeoSW</h2>';
         };
         title.addTo(map);
         var abstract = new L.Control({'position':'bottomleft'});
@@ -104,7 +104,7 @@
             abstract.show = function () {
                 this._div.classList.remove("abstract");
                 this._div.classList.add("abstractUncollapsed");
-                this._div.innerHTML = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                this._div.innerHTML = 'Geovisor SigWEB 2025';
         };
         abstract.addTo(map);
         var zoomControl = L.control.zoom({
@@ -134,15 +134,15 @@
         function pop_Comunas_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">COMUNA</th>\
+                        <th scope="row">Comuna</th>\
                         <td class="visible-with-data" id="COMUNA">' + (feature.properties['COMUNA'] !== null ? autolinker.link(String(feature.properties['COMUNA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">NOMBRE</th>\
+                        <th scope="row">Nombre</th>\
                         <td class="visible-with-data" id="NOMBRE">' + (feature.properties['NOMBRE'] !== null ? autolinker.link(String(feature.properties['NOMBRE']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">AREA</th>\
+                        <th scope="row">Área</th>\
                         <td class="visible-with-data" id="AREA">' + (feature.properties['AREA'] !== null ? autolinker.link(String(feature.properties['AREA']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
@@ -157,11 +157,11 @@
             return {
                 pane: 'pane_Comunas_1',
                 opacity: 1,
-                color: 'rgba(228,26,28,1.0)',
+                color: 'rgba(0,0,255,1.0)',
                 dashArray: '',
                 lineCap: 'square',
                 lineJoin: 'bevel',
-                weight: 4.0,
+                weight: 3.0,
                 fillOpacity: 0,
                 interactive: true,
             }
@@ -217,7 +217,7 @@
         function style_sitios_wgs_2_0() {
             return {
                 pane: 'pane_sitios_wgs_2',
-                radius: 2.0,
+                radius: 4.0,
                 opacity: 1,
                 color: 'rgba(255,255,255,1.0)',
                 dashArray: '',
